@@ -8,7 +8,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.2.2  # Menggunakan patch versi terbaru yang kompatibel
 
       - name: Select Xcode
         run: sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
@@ -28,7 +28,7 @@ jobs:
           zip -r WebDriverAgent.ipa Payload
 
       - name: Upload IPA Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v4.6.0  # Menggunakan patch versi terbaru
         with:
           name: WebDriverAgent-IPA
           path: WebDriverAgent.ipa
